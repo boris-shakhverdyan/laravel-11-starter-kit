@@ -1,0 +1,22 @@
+{
+    "name": "boris/nova-tools",
+    "description": "Tools for nova easier development",
+    "type": "library",
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^11.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Boris\\NovaTools\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "boris-shakhverdyan",
+            "email": "boris.shakhverdyan@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

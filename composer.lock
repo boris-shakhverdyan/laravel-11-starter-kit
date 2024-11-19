@@ -4,8 +4,37 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5637b2e462a4d2c8d84abe4e07e1a8b7",
+    "content-hash": "4a032b15438e44baccd0d19e6b6c8ff9",
     "packages": [
+        {
+            "name": "boris/nova-tools",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "./packages/Boris/NovaTools",
+                "reference": "e746c7d775ffdb2851d399498d591e8346dd85de"
+            },
+            "require": {
+                "illuminate/support": "^11.9",
+                "php": "^8.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Boris\\NovaTools\\": "src/"
+                }
+            },
+            "authors": [
+                {
+                    "name": "boris-shakhverdyan",
+                    "email": "boris.shakhverdyan@gmail.com"
+                }
+            ],
+            "description": "Tools for nova easier development",
+            "transport-options": {
+                "relative": true
+            }
+        },
         {
             "name": "brick/math",
             "version": "0.12.1",
@@ -9584,7 +9613,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {},
+    "stability-flags": {
+        "boris/nova-tools": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
