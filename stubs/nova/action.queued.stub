@@ -13,19 +13,17 @@ use Laravel\Nova\Actions\Action;
 use Laravel\Nova\Contracts\BatchableAction;
 use Laravel\Nova\Fields\ActionFields;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Illuminate\Bus\PendingBatch;
 
 class {{ class }} extends Action implements ShouldQueue
 {
-    use Batchable;
-    use InteractsWithQueue;
-    use Queueable;
-    use SerializesModels;
+    use Batchable, InteractsWithQueue, Queueable, SerializesModels;
 
     /**
      * Perform the action on the given models.
      *
-     * @param  \Laravel\Nova\Fields\ActionFields  $fields
-     * @param  \Illuminate\Support\Collection  $models
+     * @param  ActionFields  $fields
+     * @param  Collection  $models
      * @return mixed
      */
     public function handle(ActionFields $fields, Collection $models)
@@ -36,10 +34,10 @@ class {{ class }} extends Action implements ShouldQueue
     /**
      * Get the fields available on the action.
      *
-     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
+     * @param  NovaRequest  $request
      * @return array
      */
-    public function fields(NovaRequest $request)
+    public function fields(NovaRequest $request): array
     {
         return [];
     }
@@ -47,11 +45,11 @@ class {{ class }} extends Action implements ShouldQueue
     /**
      * Register `then`, `catch` and `finally` event on batchable job.
      *
-     * @param  \Laravel\Nova\Fields\ActionFields  $fields
-     * @param  \Illuminate\Bus\PendingBatch  $batch
+     * @param  ActionFields  $fields
+     * @param  PendingBatch  $batch
      * @return void
      */
-    public function withBatch(ActionFields $fields, PendingBatch $batch)
+    public function withBatch(ActionFields $fields, PendingBatch $batch): void
     {
         //
     }
